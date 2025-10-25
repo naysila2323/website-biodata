@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Form Biodata Interaktif Estetik</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+
+<style>
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #d6f0ff, #fbe2ff, #e8faff);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    margin: 0;
+    padding: 40px 10px;
+    color: #333;
+  }
+
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  h2 {
+    text-align: center;
+    color: #6b46c1;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(107, 70, 193, 0.4);
+    user-select: none;
+  }
+
+  form {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 35px 45px;
+    max-width: 750px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+  }
+
+  form:hover {
+    transform: scale(1.01);
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #2c3e50;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    transition: 0.3s;
+    background: #f9f9fb;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.07);
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: #6b46c1;
+    box-shadow: 0 0 12px rgba(107, 70, 193, 0.6);
+    outline: none;
+  }
+
+  input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+  }
+
+  .radio-group {
+    margin-top: 8px;
+  }
+
+  .btn-group {
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  button {
+    border: none;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  button[type="button"] {
+    background: linear-gradient(90deg, #b388eb, #8093f1);
+    color: white;
+    box-shadow: 0 5px 15px rgba(179,136,235,0.5);
+  }
+
+  button[type="button"]:hover {
+    background: linear-gradient(90deg, #8093f1, #b388eb);
+    transform: translateY(-2px);
+  }
+
+  button[type="button"]:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 8px rgba(179,136,235,0.3);
+  }
+
+  button[type="reset"] {
+    background: #ff6b6b;
+    color: white;
+  }
+
+  button[type="reset"]:hover {
+    background: #ee5253;
+  }
+
+  table {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-collapse: collapse;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  th, td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  th {
+    background: linear-gradient(90deg, #b388eb, #8093f1);
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  tbody tr:hover {
+    background: #e9d8fd;
+    transform: translateX(5px);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  @media (max-width: 600px) {
+    form {
+      padding: 25px;
+    }
+
+    table {
+      font-size: 11px;
+    }
+  }
+</style>
+</head>
+<body>
+  <h2>🌷 FORM BIODATA PEGAWAI 🌷</h2>
+
+  <form id="biodataForm">
+    <label for="nip">NISN:</label>
+    <input type="text" id="nip" required />
+
+    <label for="nama">Nama Lengkap:</label>
+    <input type="text" id="nama" required />
+
+    <label>Jenis Kelamin:</label>
+    <div class="radio-group">
+      <input type="radio" name="jk" value="Laki-laki" required /> Laki-laki
+      <input type="radio" name="jk" value="Perempuan" /> Perempuan
+    </div>
+
+    <label for="golongan">Golongan Darah:</label>
+    <select id="golongan" required>
+      <option value="">--Pilih Golongan Darah--</option>
+      <option>A</option>
+      <option>B</option>
+      <option>AB</option>
+      <option>O</option>
+      <option>-</option>
+    </select>
+
+    <label for="tempat">Tempat Lahir:</label>
+    <input type="text" id="tempat" required />
+
+    <label for="tgl">Tanggal Lahir:</label>
+    <input type="date" id="tgl" required />
+
+    <label for="status">Status:</label>
+    <select id="status" required>
+      <option value="">--Pilih Status--</option>
+      <option>Belum Menikah</option>
+      <option>Menikah</option>
+    </select>
+
+    <label for="jabatan">Jabatan:</label>
+    <input type="text" id="jabatan" placeholder="Contoh: Staf Data Elektronik" required />
+
+    <label for="unit">Unit Kerja:</label>
+    <input
+      type="text"
+      id="unit"
+      placeholder="Contoh: Dinas Elektronik dan Kearsipan"
+      required
+    />
+
+    <label for="alamat">Alamat Kantor:</label>
+    <textarea id="alamat" rows="2" required></textarea>
+
+    <label for="telp">Telp / Fax Kantor:</label>
+    <input type="text" id="telp" />
+
+    <label for="rumah">Alamat Rumah:</label>
+    <textarea id="rumah" rows="2" required></textarea>
+
+    <label for="hp">Telepon / HP:</label>
+    <input type="text" id="hp" required />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="nama@email.com" required />
+
+    <label for="web">Website:</label>
+    <input type="url" id="web" placeholder="https://" />
+
+    <label for="hobi">Hobi:</label>
+    <textarea
+      id="hobi"
+      rows="2"
+      placeholder="Contoh: Membaca, Menulis, Traveling"
+      required
+    ></textarea>
+
+    <label for="kesan">Kesan Pesan:</label>
+    <textarea
+      id="kesan"
+      rows="3"
+      placeholder="Tulis kesan dan pesan kamu di sini..."
+      required
+    ></textarea>
+
+    <div class="btn-group">
+      <button type="button" onclick="simpanData()">💾 Simpan</button>
+      <button type="reset">❌ Batal</button>
+    </div>
+  </form>
+
+  <h2>📋 Data Hasil Input</h2>
+  <table id="tabelHasil">
+    <thead>
+      <tr>
+        <th>NISN</th>
+        <th>Nama Lengkap</th>
+        <th>Jenis Kelamin</th>
+        <th>Golongan Darah</th>
+        <th>Tempat Lahir</th>
+        <th>Tanggal Lahir</th>
+        <th>Status</th>
+        <th>Jabatan</th>
+        <th>Unit Kerja</th>
+        <th>Alamat Kantor</th>
+        <th>Telp/Fax Kantor</th>
+        <th>Alamat Rumah</th>
+        <th>Telepon/HP</th>
+        <th>Email</th>
+        <th>Website</th>
+        <th>Hobi</th>
+        <th>Kesan Pesan</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+<script>
+  function simpanData() {
+    const nip = document.getElementById("nip").value.trim();
+    const nama = document.getElementById("nama").value.trim();
+    const jk = document.querySelector('input[name="jk"]:checked');
+    const golongan = document.getElementById("golongan").value;
+    const tempat = document.getElementById("tempat").value.trim();
+    const tgl = document.getElementById("tgl").value;
+    const status = document.getElementById("status").value;
+    const jabatan = document.getElementById("jabatan").value.trim();
+    const unit = document.getElementById("unit").value.trim();
+    const alamat = document.getElementById("alamat").value.trim();
+    const telp = document.getElementById("telp").value.trim();
+    const rumah = document.getElementById("rumah").value.trim();
+    const hp = document.getElementById("hp").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const web = document.getElementById("web").value.trim();
+    const hobi = document.getElementById("hobi").value.trim();
+    const kesan = document.getElementById("kesan").value.trim();
+
+    // Validasi wajib diisi
+    if (
+      !nip || !nama || !jk || !golongan || !tempat || !tgl || !status ||
+      !jabatan || !unit || !alamat || !rumah || !hp || !email || !hobi || !kesan
+    ) {
+      alert("⚠️ Semua data wajib diisi!");
+      return;
+    }
+
+    // Validasi email
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+      alert("❗ Format email tidak valid!");
+      return;
+    }
+
+    const tabel = document.querySelector("#tabelHasil tbody");
+    const baris = tabel.insertRow();
+
+    baris.insertCell(0).textContent = nip;
+    baris.insertCell(1).textContent = nama;
+    baris.insertCell(2).textContent = jk.value;
+    baris.insertCell(3).textContent = golongan;
+    baris.insertCell(4).textContent = tempat;
+    baris.insertCell(5).textContent = tgl;
+    baris.insertCell(6).textContent = status;
+    baris.insertCell(7).textContent = jabatan;
+    baris.insertCell(8).textContent = unit;
+    baris.insertCell(9).textContent = alamat;
+    baris.insertCell(10).textContent = telp;
+    baris.insertCell(11).textContent = rumah;
+    baris.insertCell(12).textContent = hp;
+    baris.insertCell(13).textContent = email;
+    baris.insertCell(14).textContent = web;
+    baris.insertCell(15).textContent = hobi;
+    baris.insertCell(16).textContent = kesan;
+
+    document.getElementById("biodataForm").reset();
+  }
+</script>
+</body>
+</html>
